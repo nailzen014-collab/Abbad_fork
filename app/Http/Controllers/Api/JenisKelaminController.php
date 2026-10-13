@@ -18,4 +18,10 @@ class JenisKelaminController extends Controller
 
         return JenisKelaminResource::collection($jenisKelamin);
     }
+    public function show(string|int $id): JenisKelaminResource
+    {
+        $jenisKelamin = JenisKelamin::findOrFail($id);
+
+        return new JenisKelaminResource($jenisKelamin);
+    }
 }

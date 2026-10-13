@@ -9,7 +9,13 @@ use Illuminate\Support\Facades\Route;
 // Endpoint Master
 Route::get('/kelas', [KelasController::class, 'index']);
 Route::get('/jenis-kelamin', [JenisKelaminController::class, 'index']);
+Route::get('/jenis-kelamin/{id}', [JenisKelaminController::class, 'show']);
 Route::get('/siswa', [SiswaController::class, 'index']);
+Route::get('/siswa/{id}', [SiswaController::class, 'show']);
+Route::post('/siswa', [SiswaController::class, 'store']);
+Route::put('/siswa/{id}', [SiswaController::class, 'update']);
+Route::delete('/siswa/{id}', [SiswaController::class, 'destroy']
+);
 
 // Endpoint Pendaftaran OSIS
 Route::get('/pendaftaran-osis', [PendaftaranOsisController::class, 'index']);
